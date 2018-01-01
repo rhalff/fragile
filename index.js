@@ -17,7 +17,7 @@ function * _weak(value) {
 
   gc()
 
-  yield %GetWeakMapEntries(d, 0).length
+  yield %GetWeakMapEntries(d, 0).length !== 0
 }
 
 function weak(value) {
