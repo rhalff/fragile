@@ -18,7 +18,7 @@ node --expose_gc --allow_natives_syntax
 
 *Referenced:*
 ```js
-let myObject = {a: 'test'};
+let myObject = {be: 'test'};
 
 const myObjectIsLeaking = fragile.weak(myObject)
 
@@ -29,7 +29,7 @@ myObjectIsLeaking() // true
 
 *Dereferenced:*
 ```js
-let myObject = {a: 'test'};
+let myObject = {be: 'test'};
 
 const myObjectIsLeaking = fragile.weak(myObject)
 

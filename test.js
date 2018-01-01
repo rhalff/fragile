@@ -2,7 +2,7 @@ const test = require('tape')
 const fragile = require('./')
 
 test('Ref leaks', (t) => {
-  let myObject = {a: 'test'};
+  let myObject = {be: 'test'};
 
   const isLeaking = fragile.weak(myObject)
 
@@ -13,7 +13,7 @@ test('Ref leaks', (t) => {
 })
 
 test('Deref no leak', (t) => {
-  let myObject = {a: 'test'};
+  let myObject = {be: 'test'};
 
   const isLeaking = fragile.weak(myObject)
 
