@@ -1,6 +1,6 @@
 {
   "name": "fragile",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A fragile `weak` implementation for v8.",
   "author": "Rob Halff <rob.halff@gmail.com>",
   "license": "MIT",
