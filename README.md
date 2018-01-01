@@ -22,9 +22,7 @@ const fragile = require('fragile')
 
 let myObject = {be: 'test'};
 
-const myObjectIsLeaking = fragile.weak(myObject)
-
-fragile.gc()
+const myObjectIsLeaking = fragile(myObject)
 
 myObjectIsLeaking() // true
 ```
@@ -35,11 +33,9 @@ const fragile = require('fragile')
 
 let myObject = {be: 'test'};
 
-const myObjectIsLeaking = fragile.weak(myObject)
+const myObjectIsLeaking = fragile(myObject)
 
 myObject = null
-
-fragile.gc()
 
 myObjectIsLeaking() // false
 ```

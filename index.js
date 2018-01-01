@@ -1,13 +1,10 @@
 /* global gc */
 function * _weak(value) {
-  if (value == undefined) return
-
   const d = new WeakMap()
 
-  function setWeakValue(value) {
-    if (value === false) return
-
-    d.set(value, true)
+  function setWeakValue(_value) {
+    if (_value === false) return
+    d.set(_value, true)
   }
 
   setWeakValue(value)
@@ -15,9 +12,10 @@ function * _weak(value) {
 
   value = null
 
-  gc()
-
-  yield %GetWeakMapEntries(d, 0).length !== 0
+  while (true) {
+    gc()
+    yield %GetWeakMapEntries(d, 0).length !== 0
+  }
 }
 
 function weak(value) {
@@ -26,7 +24,4 @@ function weak(value) {
   return () => a.next().value
 }
 
-module.exports = {
-  weak,
-  gc: () => _weak()
-}
+module.exports = weak
