@@ -1,25 +1,23 @@
 /* global gc */
 function * _weak(value) {
-  if (value == undefined) {
-    return
-  } else {
-    const d = new WeakMap()
+  if (value == undefined) return
 
-    function setWeakValue(value) {
-      if (value === false) return
+  const d = new WeakMap()
 
-      d.set(value, true)
-    }
+  function setWeakValue(value) {
+    if (value === false) return
 
-    setWeakValue(value)
-    setWeakValue(false)
-
-    value = null
-
-    gc()
-
-    yield %GetWeakMapEntries(d, 0).length
+    d.set(value, true)
   }
+
+  setWeakValue(value)
+  setWeakValue(false)
+
+  value = null
+
+  gc()
+
+  yield %GetWeakMapEntries(d, 0).length
 }
 
 function weak(value) {
