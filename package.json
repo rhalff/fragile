@@ -2,7 +2,17 @@
   "name": "fragile",
   "version": "1.0.4",
   "description": "A fragile `weak` implementation for v8.",
-  "author": "Rob Halff <rob.halff@gmail.com>",
+  "author": {
+    "name": "Rob Halff",
+    "email": "rob.halff@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/rhalff/fragile.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rhalff/fragile/issues"
+  },
   "license": "MIT",
   "main": "index.js",
   "scripts": {
