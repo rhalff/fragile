@@ -1,10 +1,10 @@
 /* global gc */
 function * _weak(value) {
-  const d = new WeakMap()
+  const d = new WeakSet()
 
   function setWeakValue(_value) {
     if (_value === false) return
-    d.set(_value, true)
+    d.add(_value)
   }
 
   setWeakValue(value)
@@ -14,7 +14,7 @@ function * _weak(value) {
 
   while (true) {
     gc()
-    yield %GetWeakMapEntries(d, 0).length !== 0
+    yield %GetWeakSetValues(d, 0).length !== 0
   }
 }
 
