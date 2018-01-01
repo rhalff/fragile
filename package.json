@@ -1,0 +1,17 @@
+{
+  "name": "fragile",
+  "version": "0.0.0",
+  "description": "A fragile `weak` implementation for v8.",
+  "author": "Rob Halff <rob.halff@gmail.com>",
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "test": "node --expose_gc --allow_natives_syntax test.js"
+  },
+  "keywords": [
+    "memoryleak", "weak", "gc", "v8", "memory", "leak", "browser", "node"
+  ],
+  "devDependencies": {
+    "tape": "^4.8.0"
+  }
+}
