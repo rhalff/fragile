@@ -14,7 +14,7 @@ function * _weak(value) {
 
   while (true) {
     gc()
-    yield %GetWeakSetValues(d, 0).length !== 0
+    yield eval('%GetWeakSetValues(d, 0).length !== 0')
   }
 }
 
